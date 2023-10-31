@@ -39,10 +39,8 @@
 
 <script setup>
 import { ref, onBeforeUnmount, onBeforeMount, onMounted, onDeactivated } from 'vue';
-import Hls from 'hls.js';
 import { useIntersectionObserver } from '@vueuse/core'
 
-let hls = null;
 const video = ref(null);
 const wrapper = ref(null);
 const remaining = ref(null);
@@ -152,10 +150,8 @@ async function setup() {
         height: props.data.secure_media.reddit_video.height
     }
 
-    // Load video
-    hls = new Hls();
-    hls.loadSource(props.data.secure_media.reddit_video.hls_url);
-    hls.attachMedia(video.value);
+    // set video source to load
+    video.value.src=props.data.secure_media.reddit_video.hls_url;
 
     // Event for loaded
     video.value.onloadeddata = () => {

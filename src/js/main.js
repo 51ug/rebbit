@@ -19,7 +19,7 @@ if (!localStorage.getItem("hidden_posts")) {
 }
 
 if (!localStorage.getItem("autoplay")) {
-    localStorage.setItem("autoplay", JSON.stringify(true));
+    localStorage.setItem("autoplay", JSON.stringify(false));
 }
 
 if (!localStorage.getItem("title_size")) {
@@ -27,7 +27,7 @@ if (!localStorage.getItem("title_size")) {
 }
 
 if (!localStorage.getItem("check_for_updates")) {
-    localStorage.setItem("check_for_updates", JSON.stringify(true));
+    localStorage.setItem("check_for_updates", JSON.stringify(false));
 }
 
 if (!localStorage.getItem("in_app_browser")) {
